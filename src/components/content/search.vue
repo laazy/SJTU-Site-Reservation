@@ -26,6 +26,7 @@
             }
         },
         methods : {
+            
             initTime() {
                 var tmp = Date();
                 this.time = tmp.toDateString();

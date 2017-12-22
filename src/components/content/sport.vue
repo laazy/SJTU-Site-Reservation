@@ -8,7 +8,8 @@
         name: "sport",
         component : {
           Search
-        }
+        },
+        props: ["room_states"]
     }
 </script>
 

@@ -8,7 +8,8 @@
         name: "study",
       component : {
           Search
-      }
+      },
+      props:["room_states"]
     }
 </script>
 
