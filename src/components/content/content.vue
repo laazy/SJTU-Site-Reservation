@@ -10,22 +10,18 @@
 </template>
 
 <script>
-
-
-  export default {
-    el: '#study',
-
-    method:{
-      function set(value) {
-    studyshow = value
+  import Sport from "./sport"
+  import Study from "./study"
+  export default{
+    name: "content",
+    component :{
+      Sport,
+      Study
+    }
   }
-  }
-  }
-
-
 </script>
 
-<style>
+<style scoped>
 
 </style>
 

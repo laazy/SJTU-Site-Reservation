@@ -15,24 +15,17 @@
 <script>
   import Navbar from './components/Navbar/Navbar.vue'
   import Introduction from './components/Introduction/Introduction.vue'
-<<<<<<< HEAD
-  import Content from './components/content/content.vue'
-  import Search from "./components/content/search.vue"
-=======
   import Content from './components/content/Content.vue'
->>>>>>> origin/板块选择
+  import Search from "./components/content/search.vue"
 
 export default {
   name: 'app',
   components: {
     Navbar,
     Introduction,
-<<<<<<< HEAD
     Content,
-    Search
-=======
+    Search,
     Content
->>>>>>> origin/板块选择
   }
 }
 
