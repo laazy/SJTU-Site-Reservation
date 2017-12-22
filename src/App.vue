@@ -2,21 +2,25 @@
   <div id="app">
   <navbar></navbar>
     <introduction></introduction>
-  <content></content>
+  <content>
+    <search></search>
+  </content>
   </div>
 </template>
 
 <script>
   import Navbar from './components/Navbar/Navbar.vue'
   import Introduction from './components/Introduction/Introduction.vue'
-  import content from './components/content/content.vue'
+  import Content from './components/content/content.vue'
+  import Search from "./components/content/search.vue"
 
 export default {
   name: 'app',
   components: {
     Navbar,
     Introduction,
-    content
+    Content,
+    Search
   }
 }
 
