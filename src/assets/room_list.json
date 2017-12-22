@@ -1,0 +1,30 @@
+{
+  "study_site":{
+    "main_library":{
+      "A215":{
+        "state":"A",
+        "ordered_time":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "capacity":8,
+        "projector":true,
+        "description":"have not write"
+      },
+      "A216":{
+        "state":"A",
+        "ordered_time":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "capacity":8,
+        "projector":true,
+        "description":"have not write"
+      }
+    },
+    "above_hall":{
+
+    },
+    "middle_hall":{
+
+    },
+    "below_hall":{
+
+    }
+  },
+  "sport_stie":{}
+}
