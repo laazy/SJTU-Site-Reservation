@@ -14,7 +14,7 @@
 
 <style scoped>
   body {
-    padding-top: 50px;
+    padding-op: 50px;
     padding-bottom: 20px;
     text-align: left;
   }
