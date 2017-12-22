@@ -3,14 +3,14 @@
     "main_library":{
       "A215":{
         "state":"A",
-        "ordered_time":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "ordered_time":{"2017-12-26":[20,26,30,36]},
         "capacity":8,
         "projector":true,
         "description":"have not write"
       },
       "A216":{
         "state":"A",
-        "ordered_time":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "ordered_time":{},
         "capacity":8,
         "projector":true,
         "description":"have not write"
