@@ -6,10 +6,14 @@
     import Search from "./search"
     export default {
         name: "sport",
-        component : {
+      data(){
+        return{
+          room_states:{}
+        }
+      } ,
+      component : {
           Search
-        },
-        props: ["room_states"]
+        }
     }
 </script>
 
