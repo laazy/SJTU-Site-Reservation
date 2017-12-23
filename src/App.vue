@@ -5,7 +5,7 @@
     <!--search v-on:pass_rosta="getStatusList"></search-->
   <Content></Content>
     <study></study>
-    <li v-for="(value,key) in status_list" >room:{{key}} status:{{value}}</li>
+    <!--li v-for="(value,key) in status_list" >room:{{key}} status:{{value}}</li-->
   </div>
 </template>
 

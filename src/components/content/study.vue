@@ -2,13 +2,12 @@
   <div id="study">
     <search v-on:pass_rosta="getRoomStates"></search>
     <!--p  v-for="(value,key) in room_states">room:{{key}} status:{{value}}</p-->
-    <!--li v-for="(value,key) in room_states " >
-      room:{{key}}
-      <!--option v-for="value in values" >
-        <option v-if = "value == 1" class="timeline-available" ></option>
-        <option v-else ="value == 0" class="timeline-unavailable"></option>
-      </option>
-    </li-->
+    <li v-for="(value,key) in room_states " >
+      room:{{key}}   23
+      <option v-for="valuex in value" ></option>
+        <option v-if = "valuex == 1" class="timeline-available" ></option>
+        <option v-else ="valuex == 0" class="timeline-unavailable"></option>
+    </li>
   </div>
 </template>
 
