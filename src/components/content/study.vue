@@ -1,10 +1,10 @@
 ﻿<template>
   <div id="study">
     <search v-on:pass_rosta="getRoomStates"></search>
-    <p>{{room_states}}</p>
-    <!-->>li v-for="(value,key) in room_states " >
+    <!--p  v-for="(value,key) in room_states">room:{{key}} status:{{value}}</p-->
+    <!--li v-for="(value,key) in room_states " >
       room:{{key}}
-      <option v-for="value in values" >
+      <!--option v-for="value in values" >
         <option v-if = "value == 1" class="timeline-available" ></option>
         <option v-else ="value == 0" class="timeline-unavailable"></option>
       </option>
@@ -18,20 +18,20 @@
       name: "study",
       data(){
         return{
-          room_states:{"abcd":"1234"}
+          room_states:{"abhhhcd":"1234"}
         }
       },
       methods: {
         getRoomStates:function(room_status){
-        this.room_states = room_status;
+          console.log("have get the data",room_status);
+          this.room_states = room_status;
         }
       },
-
-      component : {
+      components : {
           Search
       }
     }
-    
+
 </script>
 
 <style type="text/css">

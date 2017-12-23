@@ -2,10 +2,9 @@
   <div id="app">
   <navbar></navbar>
     <introduction></introduction>
-  <content>
-    <search v-on:pass_rosta="getStatusList"></search>
-  </content>
+    <!--search v-on:pass_rosta="getStatusList"></search-->
   <Content></Content>
+    <study></study>
     <li v-for="(value,key) in status_list" >room:{{key}} status:{{value}}</li>
   </div>
 </template>
@@ -15,6 +14,7 @@
   import Introduction from './components/Introduction/Introduction.vue'
   import Content from './components/content/Content.vue'
   import Search from "./components/content/search.vue"
+  import Study from "./components/content/study.vue"
 
 export default {
   name: 'app',
@@ -23,7 +23,8 @@ export default {
     Introduction,
     Content,
     Search,
-    Content
+    Content,
+    Study
   },
   data(){
     return{

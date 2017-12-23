@@ -3,7 +3,7 @@
       <select v-model="hall_type">
         <option v-for="(value,key) in room_list" v-bind:value="key">{{key}}</option>
       </select>
-      <input type = "date" v-model="sel_time">
+      <input type = "date" v-model="sel_time" id="date_input">
     </div>
 </template>
 
@@ -74,6 +74,7 @@
                 this.site_type = "sport_site"
             }
         }
+
     }
 </script>
 
