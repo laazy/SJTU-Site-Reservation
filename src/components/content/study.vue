@@ -2,7 +2,7 @@
   <div id="study">
     <search v-on:pass_rosta="getRoomStates"></search>
     <p>{{room_states}}</p>
-    <!-->>li v-for="(value,key) in room_states " >
+    <!--li v-for="(value,key) in room_states " >
       room:{{key}}
       <option v-for="value in values" >
         <option v-if = "value == 1" class="timeline-available" ></option>
