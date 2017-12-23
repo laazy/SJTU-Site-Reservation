@@ -5,11 +5,15 @@
 <script>
     import Search from "./search"
     export default {
-        name: "study",
+      name: "study",
+      data(){
+        return{
+          room_states:{}
+        }
+      } ,
       component : {
           Search
-      },
-      props:["room_states"]
+      }
     }
 </script>
 

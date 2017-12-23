@@ -2,13 +2,11 @@
   <div id="app">
   <navbar></navbar>
     <introduction></introduction>
-<<<<<<< HEAD
   <content>
-    <search></search>
+    <search v-on:pass_rosta="getStatusList"></search>
   </content>
-=======
   <Content></Content>
->>>>>>> origin/板块选择
+    <li v-for="(value,key) in status_list" >room:{{key}} status:{{value}}</li>
   </div>
 </template>
 
@@ -26,6 +24,16 @@ export default {
     Content,
     Search,
     Content
+  },
+  data(){
+    return{
+      status_list:{}
+    }
+  },
+  methods: {
+    getStatusList:function(room_status){
+      this.status_list = room_status;
+    }
   }
 }
 
