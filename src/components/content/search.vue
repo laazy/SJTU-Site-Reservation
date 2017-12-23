@@ -13,14 +13,16 @@
         name: "search",
         data() {
             return {
+                //prepare the data of the search box
                 sel_time: "",
                 site_type:"study_site",
                 hall_type:"main_library",
-                //hall_type: this.site_type,
-                room_list:rooms["study_site"]  //[this.hall_type]
+                //initiate the rooms_list with study_site
+                room_list:rooms["study_site"]
             }
         },
         watch :{
+            //watch the change of data, emit a pass_rosta to father_component when data changed
             hall_type:function(new_hall){
             var room_status = this.getRoomStatus(this.sel_time,new_hall);
             this.$emit("pass_rosta",room_status);
@@ -31,17 +33,23 @@
             }
         },
         methods : {
+            //check the validity of the data
             getRoomStatus(now_time, now_hall){
+                if (now_time =="" || now_hall=="")
+                  return
                 var hall_rooms = this.room_list[now_hall]
                 var ans = {}
+                //for each room
                 for (var i in hall_rooms){
                     var time_array = [0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0]
                     var room_info = hall_rooms[i]
+                    //if room is not available, make it all occupied
                     if (room_info.state != "A") {
                       for (var j = 0; j < 48; j++)
                         time_array[j] = 1;
                     }
                     else {
+                      //otherwise, set the occupied time to 1 and other free time stay 0
                       var occupied = room_info.ordered_time;
                       for (j in occupied) {
                         //console.log("j",j);
@@ -65,11 +73,14 @@
                 }
                 return ans;
             },
+            //offering methods to initiate the data
             initStudy() {
                 this.site_type = "study_site"
                 this.room_list = rooms["study_site"]
+                this.hall_type =""
             },
             initSport(){
+                this.hall_type = ""
                 this.room_list = rooms["sport_site"]
                 this.site_type = "sport_site"
             }
