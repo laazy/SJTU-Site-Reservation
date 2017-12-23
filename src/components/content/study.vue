@@ -3,6 +3,7 @@
     <search v-on:pass_rosta="getRoomStates"></search>
     <dem class="demo">
     <!--p  v-for="(value,key) in room_states">room:{{key}} status:{{value}}</p-->
+<<<<<<< HEAD
       <div id="seat-map" class="seatCharts-container" tabindex="0" >
     <div v-for="(value,key) in room_states " >
     <div class="seatCharts-row"></div>
@@ -16,6 +17,14 @@
       
    </div>
      
+=======
+    <li v-for="(value,key) in room_states " >
+      room:{{key}}   23
+      <option v-for="valuex in value" ></option>
+        <option v-if = "valuex == 1" class="timeline-available" ></option>
+        <option v-else ="valuex == 0" class="timeline-unavailable"></option>
+    </li>
+>>>>>>> 655e707947bd37210ecea25ce723129bdc79144d
   </div>
 </dem>
 </div>
