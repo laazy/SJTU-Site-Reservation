@@ -1,10 +1,6 @@
 <template>
   <div id="app">
   <navbar></navbar>
-    <introduction></introduction>
-  <content>
-    <search v-on:pass_rosta="getStatusList"></search>
-  </content>
   <Content></Content>
     <li v-for="(value,key) in status_list" >room:{{key}} status:{{value}}</li>
   </div>
@@ -12,18 +8,13 @@
 
 <script>
   import Navbar from './components/Navbar/Navbar.vue'
-  import Introduction from './components/Introduction/Introduction.vue'
-  import Content from './components/content/Content.vue'
-  import Search from "./components/content/search.vue"
+  import Content from "./components/content/content.vue"
 
 export default {
   name: 'app',
   components: {
     Navbar,
-    Introduction,
     Content,
-    Search,
-    Content
   },
   data(){
     return{

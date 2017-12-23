@@ -1,5 +1,5 @@
 <template>
-  <div class="jumbotron">
+  <div class="jumbotron" id = "introduction">
     <div class="container">
       <h1>繁杂的预定网站</h1>
       <h1>现已汇集一处</h1>
