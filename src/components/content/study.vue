@@ -1,22 +1,60 @@
-<template>
-
+﻿<template>
+  <div id="study">
+    <search v-on:pass_rosta="getRoomStates"></search>
+    <p>{{room_states}}</p>
+    <!-->>li v-for="(value,key) in room_states " >
+      room:{{key}}
+      <option v-for="value in values" >
+        <option v-if = "value == 1" class="timeline-available" ></option>
+        <option v-else ="value == 0" class="timeline-unavailable"></option>
+      </option>
+    </li-->
+  </div>
 </template>
 
 <script>
-    import Search from "./search"
+    import Search from "./search.vue"
     export default {
       name: "study",
       data(){
         return{
-          room_states:{}
+          room_states:{"abcd":"1234"}
         }
-      } ,
+      },
+      methods: {
+        getRoomStates:function(room_status){
+        this.room_states = room_status;
+        }
+      },
+
       component : {
           Search
       }
     }
+    
 </script>
 
-<style scoped>
-
+<style type="text/css">
+  option.timeline-available {
+  color: #182C4E;
+  height: 25px;
+  width: 10px;
+  line-height: 25px;
+  margin: 3px;
+  float: left;
+  text-align: center;
+  outline: none;
+  font-size: 13px;
+  }
+  option.timeline-unavailable {
+  color: #472B34;
+  height: 25px;
+  width: 10px;
+  line-height: 25px;
+  margin: 3px;
+  float: left;
+  text-align: center;
+  outline: none;
+  font-size: 13px;
+  }
 </style>
