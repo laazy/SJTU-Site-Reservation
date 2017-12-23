@@ -13,7 +13,7 @@
   import Sport from "./sport"
   import Study from "./study"
   export default{
-    name: "content",
+    name: "Content",
     component :{
       Sport,
       Study

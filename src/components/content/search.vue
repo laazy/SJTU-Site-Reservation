@@ -40,15 +40,25 @@
                     if (room_info.state != "A") {
                       for (var j = 0; j < 48; j++)
                         time_array[j] = 1;
-                      break;
                     }
-                    var occupied = room_info.ordered_time;
-                    for ( j in occupied){
-                      if( j == now_time){
-                        for( var k=0;k<occupied[j].length;k+=2)
-                          for (var l=occupied[j][k];k<occupied[j][k+1];l++)
-                            time_array[l]=1
-                        break;
+                    else {
+                      var occupied = room_info.ordered_time;
+                      for (j in occupied) {
+                        //console.log("j",j);
+                        //console.log("o[j]",occupied[j])
+                        //console.log("now_time",now_time)
+                        if (j == now_time) {
+                          //console.log("j_t",j)
+                          //console.log("now_time_t",now_time)
+                          for (var k = 0; k < occupied[j].length ; k = k+2) {
+                            var begin = occupied[j][k]
+                            var end = occupied[j][k+1]
+                            //console.log("begin",begin)
+                            //console.log("end",end)
+                            for (var l = begin; l < end; l++)
+                              time_array[l] = 1;
+                          }
+                        }
                       }
                     }
                     ans[i]=time_array;
