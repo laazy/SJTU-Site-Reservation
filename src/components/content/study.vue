@@ -1,5 +1,7 @@
-<template>
+﻿<template>
+<div id="study">
 
+  <img src="../../Image/学习.png" height="300" width="300"/></div>
 </template>
 
 <script>
