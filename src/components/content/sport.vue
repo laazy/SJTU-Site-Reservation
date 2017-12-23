@@ -7,13 +7,13 @@
 <script>
     import Search from "./search"
     export default {
-        name: "sport",
+      name: "sport",
       data(){
         return{
           room_states:{}
         }
       } ,
-      component : {
+      components : {
           Search
         }
     }

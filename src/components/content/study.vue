@@ -13,7 +13,7 @@
           room_states:{}
         }
       } ,
-      component : {
+      components : {
           Search
       }
     }
