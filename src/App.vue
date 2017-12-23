@@ -2,9 +2,7 @@
   <div id="app">
   <navbar></navbar>
     <introduction></introduction>
-  <content>
-    <search v-on:pass_rosta="getStatusList"></search>
-  </content>
+    <!--search v-on:pass_rosta="getStatusList"></search-->
   <Content></Content>
     <study></study>
     <li v-for="(value,key) in status_list" >room:{{key}} status:{{value}}</li>
@@ -26,7 +24,13 @@
   Content,
   Search,
   Study,
-  Content
+  Content,
+    Navbar,
+    Introduction,
+    Content,
+    Search,
+    Content,
+    Study
   },
   data(){
   return{
