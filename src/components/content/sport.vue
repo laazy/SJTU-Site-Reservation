@@ -1,18 +1,19 @@
 <template>
 <div id="sport">
-  <img src="../../Image/运动.png" height="300" width="300"/>
+  <!--img src="../../Image/运动.png" height="300" width="300"/--->
   <search ref="search" v-on:pass_rosta="getRoomStates"></search>
   <div class="demo">
     <div id="seat-map" class="seatCharts-container" tabindex="0" >
-      <div v-for="(value,key) in room_states " >
+      <div v-for="(value,key) in room_states " id = "rooms">
         <div class="seatCharts-row"></div>
         <div class="seatCharts-cell seatCharts-space">{{key}}</div>
-        <div class="seatCharts-cell seatCharts-space"></div>
+        <div id="seats">
         <div v-for="(valuex,index) in value" >
           <div v-if = "valuex == 0" @click="selectTime(key,index)" id="2_0" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell available" ></div>
           <div v-else-if ="valuex == 2" @click="cancelTime(key,index)" id="2_2" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell selected"></div>
           <div v-else-if ="valuex == 3"  id="2_3" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell auditting"></div>
           <div v-else="values == 1" id="2_1" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell unavailable"></div>
+        </div>
         </div>
       </div>
     </div>
@@ -36,10 +37,14 @@
       methods: {
         getRoomStates:function(room_status){
           //console.log("have get the data",room_status);
+          for (var i in room_status) {
+            room_status[i].splice(44, 4);
+            room_status[i].splice(0, 17);
+          }
           this.room_states = room_status;
         },
         init(){
-          this.$refs.search.initStudy()
+          this.$refs.search.initSport()
         },
         selectTime(key,index){
           if(this.select_room == "" || this.select_amount == 0)
@@ -117,6 +122,16 @@
     .demo {
       width: 1600px
     }
+  }
+
+  #seats{
+    margin-left: 30px;
+  }
+
+  #rooms{
+    margin-left:auto;
+    width : 100%;
+    height: 50px
   }
 
   .front {
