@@ -76,12 +76,12 @@
             initStudy() {
                 this.site_type = "study_site"
                 this.room_list = rooms["study_site"]
-                this.hall_type =""
+                this.hall_type = ""
             },
             initSport(){
-                this.hall_type = ""
                 this.room_list = rooms["sport_site"]
                 this.site_type = "sport_site"
+                this.hall_type = ""
               //console.log("search init sport")
             }
         }
