@@ -1,6 +1,6 @@
 <template>
-  <div class="navbar">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div id="navbar">
+    <nav class="navbar navbar-inverse navbar-fixed-top" >
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -11,7 +11,7 @@
           </button>
           <a class="navbar-brand" href="#">场馆预定系统</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div  class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" placeholder="Jaccount" class="form-control">
@@ -21,14 +21,16 @@
             </div>
             <button type="submit" class="btn btn-success">登陆</button>
           </form>
-        </div><!--/.navbar-collapse -->
+        </div>
       </div>
     </nav>
   </div>
 </template>
 
 <script>
-
+  export default {
+    name:"navbar"
+  }
 </script>
 
 <style scoped>
