@@ -7,10 +7,7 @@
 
 <script>
   import Navbar from './components/Navbar/Navbar.vue'
-  import Introduction from './components/Introduction/Introduction.vue'
   import Content from './components/content/Content.vue'
-  import Search from "./components/content/search.vue"
-  import Study from "./components/content/study.vue"
   export default {
   name: 'app',
   components: {
