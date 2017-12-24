@@ -80,7 +80,7 @@
                 this.hall_type =""
             },
             initSport(){
-                this.hall_type = ""
+                this.hall_type = "sports_site"
                 this.room_list = rooms["sport_site"]
                 this.site_type = "sport_site"
             }
