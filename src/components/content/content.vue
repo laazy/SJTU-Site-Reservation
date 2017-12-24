@@ -9,8 +9,8 @@
         <button type="button" class="btn btn-default" v-on:click="setSport">运动场馆</button>
       </div>
     </div>
-    <study v-show="study_show"></study>
-    <sport v-show="sport_show"></sport>
+    <study ref="study" v-show="study_show"></study>
+    <sport ref="sport" v-show="sport_show"></sport>
   </div>
 </template>
 
@@ -38,11 +38,14 @@
         this.intro_show = false;
         this.study_show = true;
         this.sport_show = false;
+        this.$refs.study.init();
       },
       setSport:function(event){
         this.intro_show = false;
         this.study_show = false;
         this.sport_show = true;
+        this.$refs.sport.init();
+        //console.log("content call sport")
       }
     }
   }
