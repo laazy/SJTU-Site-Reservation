@@ -15,10 +15,9 @@
             return {
                 //prepare the data of the search box
                 sel_time: "",
-                site_type:"study_site",
-                hall_type:"main_library",
-                //initiate the rooms_list with study_site
-                room_list:rooms["study_site"]
+                site_type:"",
+                hall_type:"",
+                room_list:{}
             }
         },
         watch :{
@@ -80,9 +79,10 @@
                 this.hall_type =""
             },
             initSport(){
-                this.hall_type = "sports_site"
+                this.hall_type = ""
                 this.room_list = rooms["sport_site"]
                 this.site_type = "sport_site"
+              //console.log("search init sport")
             }
         }
 

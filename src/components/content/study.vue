@@ -1,7 +1,7 @@
 ﻿<template>
 <div id="study">
   <img src="../../Image/学习.png" height="300" width="300"/>
-    <search v-on:pass_rosta="getRoomStates"></search>
+    <search ref="search" v-on:pass_rosta="getRoomStates"></search>
     <dem class="demo">
       <div id="seat-map" class="seatCharts-container" tabindex="0" >
       <div v-for="(value,key) in room_states " >
@@ -33,6 +33,9 @@
         getRoomStates:function(room_status){
           console.log("have get the data",room_status);
           this.room_states = room_status;
+        },
+        init(){
+          this.$refs.search.initStudy()
         }
       },
       components : {

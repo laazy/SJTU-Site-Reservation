@@ -1,22 +1,20 @@
 <template>
 <div id="sport">
   <img src="../../Image/运动.png" height="300" width="300"/>
-    <search v-on:pass_rosta="getRoomStates"></search>
-    <dem class="demo">
-      <div id="seat-map" class="seatCharts-container" tabindex="0" >
+  <search ref="search" v-on:pass_rosta="getRoomStates"></search>
+  <dem class="demo">
+    <div id="seat-map" class="seatCharts-container" tabindex="0" >
       <div v-for="(value,key) in room_states " >
-      <div class="seatCharts-row"></div>
-      <div class="seatCharts-cell seatCharts-space">{{key}}</div>
-      <div class="seatCharts-cell seatCharts-space"></div>
-      <div v-for="valuex in value" >
-        <div v-if = "valuex == 0" id="2_1" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell available" ></div>
-        <div v-else ="valuex == 1" id="2_2" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell unavailable"></div>
+        <div class="seatCharts-row"></div>
+        <div class="seatCharts-cell seatCharts-space">{{key}}</div>
+        <div class="seatCharts-cell seatCharts-space"></div>
+        <div v-for="valuex in value" >
+          <div v-if = "valuex == 0"  id="2_1" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell available" ></div>
+          <div v-else ="valuex == 1" id="2_2" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell unavailable"></div>
+        </div>
       </div>
-
-   </div>
-
-  </div>
-</dem>
+    </div>
+  </dem>
 </div>
 </template>
 
@@ -29,12 +27,20 @@
           room_states:{}
         }
       } ,
-      
+
 
       methods: {
         getRoomStates:function(room_status){
-          console.log("have get the data",room_status);
+          //console.log("have get the data",room_status);
+          for (var i in room_status) {
+            room_status[i].splice(44, 4);
+            room_status[i].splice(0, 17);
+          }
           this.room_states = room_status;
+        },
+        init(){
+          this.$refs.search.initSport();
+          //console.log("sport call search")
         }
       },
 
@@ -46,7 +52,7 @@
 </script>
 
 <style type="text/css">
-  #study{
+  #sport{
         text-align: center;
   }
   .demo {
@@ -79,25 +85,25 @@
     height: 450px;
   }
 
-    .booking-details h3 {
+  .booking-details h3 {
       margin: 5px 5px 0 0;
       font-size: 16px;
-    }
+  }
 
-    .booking-details p {
+  .booking-details p {
       line-height: 26px;
       font-size: 16px;
       color: #999
-    }
+  }
 
-      .booking-details p span {
+  .booking-details p span {
         color: #666
-      }
+  }
 
   div.seatCharts-cell {
     color: #182C4E;
     height: 25px;
-    width: 10px;
+    width: 20px;
     line-height: 25px;
     margin: 3px;
     float: left;
@@ -179,11 +185,11 @@
   #selected-seats {
     max-height: 150px;
     overflow-y: auto;
-    overflow-x: none;
+    overflow-x: auto;
     width: 200px;
   }
 
-    #selected-seats li {
+  #selected-seats li {
       float: left;
       width: 72px;
       height: 26px;
@@ -194,5 +200,5 @@
       font-size: 14px;
       font-weight: bold;
       text-align: center
-    }
+  }
 </style>
