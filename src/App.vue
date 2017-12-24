@@ -1,8 +1,7 @@
 ﻿<template>
   <div id="app">
-  <navbar></navbar>
+  <!--navbar></navbar-->
   <Content></Content>
-    <study></study>
   </div>
 </template>
 
@@ -16,9 +15,6 @@
   name: 'app',
   components: {
     Navbar,
-    Introduction,
-    Search,
-    Study,
     Content
   },
   data(){
