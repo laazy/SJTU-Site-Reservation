@@ -26,5 +26,26 @@
 
     }
   },
-  "sport_stie":{}
+  "sport_site":{
+     "South gym":{
+       "A01":{
+         "state":"A",
+         "ordered_time":{"2017-12-26":[20,26,30,36]},
+         "capacity":2,
+         "projector":true,
+         "description":"have not write"
+       },
+       "A02":{
+         "state":"A",
+         "ordered_time":{"2017-12-26":[20,26,30,36]},
+         "capacity":2,
+         "projector":true,
+         "description":"have not write"
+       }
+     },
+     "New gym" :{
+
+     }, 
+
+  }
 }
