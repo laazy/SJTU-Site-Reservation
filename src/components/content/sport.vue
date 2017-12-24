@@ -1,23 +1,16 @@
 <template>
-<<<<<<< HEAD
 <div id="sport">
-
-
-  <img src="../../Image/运动.png" height="300" width="300"/></div>
-=======
-  <div id="sport">
+  <img src="../../Image/运动.png" height="300" width="300"/>
     <search v-on:pass_rosta="getRoomStates"></search>
     <dem class="demo">
-    <!--p  v-for="(value,key) in room_states">room:{{key}} status:{{value}}</p-->
       <div id="seat-map" class="seatCharts-container" tabindex="0" >
-    <div v-for="(value,key) in room_states " >
-    <div class="seatCharts-row"></div>
-     <div class="seatCharts-cell seatCharts-space">{{key}}</div>
-     <div class="seatCharts-cell seatCharts-space"></div>
-     <div class="seatCharts-cell seatCharts-space"></div>
+      <div v-for="(value,key) in room_states " >
+      <div class="seatCharts-row"></div>
+      <div class="seatCharts-cell seatCharts-space">{{key}}</div>
+      <div class="seatCharts-cell seatCharts-space"></div>
       <div v-for="valuex in value" >
         <div v-if = "valuex == 0" id="2_1" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell available" ></div>
-        <div v-else ="valuex == 1" id="2_1" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell unavailable"></div>
+        <div v-else ="valuex == 1" id="2_2" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell unavailable"></div>
       </div>
 
    </div>
@@ -25,9 +18,7 @@
   </div>
 </dem>
 </div>
->>>>>>> df2c77243c1afa5a37f55d98d825f63ea130bc67
 </template>
-
 
 <script>
     import Search from "./search"
@@ -37,10 +28,8 @@
         return{
           room_states:{}
         }
-<<<<<<< HEAD
       } ,
-=======
-      },
+      
 
       methods: {
         getRoomStates:function(room_status){
@@ -48,7 +37,7 @@
           this.room_states = room_status;
         }
       },
->>>>>>> df2c77243c1afa5a37f55d98d825f63ea130bc67
+
 
       components : {
           Search
