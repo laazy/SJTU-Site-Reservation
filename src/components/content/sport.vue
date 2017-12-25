@@ -1,8 +1,8 @@
 <template>
 <div id="sport">
-  <!--img src="../../Image/运动.png" height="300" width="300"/--->
+  <!--img src="../../Image/运动.png" height="300" width="300"/-->
   <search ref="search" v-on:pass_rosta="getRoomStates"></search>
-  <div class="demo">
+  <!--div class="demo">
     <div id="seat-map" class="seatCharts-container" tabindex="0" >
       <div v-for="(value,key) in room_states " id = "rooms">
         <div class="seatCharts-row"></div>
@@ -17,8 +17,53 @@
         </div>
       </div>
     </div>
+  </div-->
+  <div class="demo">
+    <div id="seat-map" >
+      <div v-for="(value,key) in room_states" id="rooms" >
+        <div class="seatCharts-cell" >{{key}}</div>
+        <div id ="test">
+        <div v-for="(valuex,index) in value" id="seats">
+          <div v-if = "valuex == 0" @click="selectTime(key,index)" id="s_0" class="seat"></div>
+          <div v-else-if ="valuex == 2" @click="cancelTime(key,index)" id="s_2" class="seat"></div>
+          <div v-else-if ="valuex == 3" id="s_3" class="seat"></div>
+          <div v-else="values == 1" id="s_1" class="seat"></div>
+        </div>
+        </div>
+        <br/>
+      </div>
+    </div>
   </div>
+
   <button id="submit_button" @click="submitOrder">确认提交</button>
+  <br>
+  <div id="legend" class="seatCharts-legend2">
+    <ul class="seatCharts-legendList">
+      <li class="seatCharts-legendItem">
+        <span class="seatCharts-legendDescription">30min/格</span>
+      </li>
+    </ul>
+  </div>
+  <div id="legend" class="seatCharts-legend">
+    <ul class="seatCharts-legendList">
+      <li class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell available"></div>
+        <span class="seatCharts-legendDescription">可预约</span>
+      </li>
+      <li class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell unavailable"></div>
+        <span class="seatCharts-legendDescription">已预约</span>
+      </li>
+      <li class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell auditting"></div>
+        <span class="seatCharts-legendDescription">审核中</span>
+      </li>
+      <li class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell selected"></div>
+        <span class="seatCharts-legendDescription">已选中</span>
+      </li>
+    </ul>
+  </div>
 </div>
 </template>
 
@@ -140,7 +185,7 @@
     background-color: #f0f0f0;
     color: #666;
     text-align: center;
-    padding: 3px;
+    padding: 10px;
     border-radius: 5px;
   }
 
@@ -173,7 +218,7 @@
     line-height: 25px;
     margin: 3px;
     float: left;
-    text-align: center;
+    text-align: down;
     outline: none;
     font-size: 13px;
   }
@@ -196,6 +241,7 @@
 
   div.seatCharts-seat.auditting {
     background-color: #1a29b4;
+    cursor: not-allowed;
   }
 
   div.seatCharts-seat.selected {
@@ -218,6 +264,12 @@
     padding-left: 0px;
     position: absolute;
     bottom: 16px;
+  }
+
+  div.seatCharts-legend2 {
+    padding-left: 0px;
+    position: absolute;
+    bottom: 46px;
   }
 
   ul.seatCharts-legendList {
