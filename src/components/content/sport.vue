@@ -2,22 +2,6 @@
 <div id="sport">
   <!--img src="../../Image/运动.png" height="300" width="300"/-->
   <search ref="search" v-on:pass_rosta="getRoomStates"></search>
-  <!--div class="demo">
-    <div id="seat-map" class="seatCharts-container" tabindex="0" >
-      <div v-for="(value,key) in room_states " id = "rooms">
-        <div class="seatCharts-row"></div>
-        <div class="seatCharts-cell seatCharts-space">{{key}}</div>
-        <div id="seats">
-        <div v-for="(valuex,index) in value" >
-          <div v-if = "valuex == 0" @click="selectTime(key,index)" id="2_0" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell available" ></div>
-          <div v-else-if ="valuex == 2" @click="cancelTime(key,index)" id="2_2" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell selected"></div>
-          <div v-else-if ="valuex == 3"  id="2_3" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell auditting"></div>
-          <div v-else="values == 1" id="2_1" role="checkbox" aria-checked="false" focusable="true" tabindex="-1" class="seatCharts-seat seatCharts-cell unavailable"></div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div-->
   <div class="demo">
     <div id="seat-map" >
       <div v-for="(value,key) in room_states" id="rooms" >
@@ -46,22 +30,22 @@
   </div>
   <div id="legend" class="seatCharts-legend">
     <ul class="seatCharts-legendList">
-      <li class="seatCharts-legendItem">
+      <div class="seatCharts-legendItem">
         <div class="seatCharts-seat seatCharts-cell available"></div>
         <span class="seatCharts-legendDescription">可预约</span>
-      </li>
-      <li class="seatCharts-legendItem">
+      </div>
+      <div class="seatCharts-legendItem">
         <div class="seatCharts-seat seatCharts-cell unavailable"></div>
         <span class="seatCharts-legendDescription">已预约</span>
-      </li>
-      <li class="seatCharts-legendItem">
+      </div>
+      <div class="seatCharts-legendItem">
         <div class="seatCharts-seat seatCharts-cell auditting"></div>
         <span class="seatCharts-legendDescription">审核中</span>
-      </li>
-      <li class="seatCharts-legendItem">
+      </div>
+      <div class="seatCharts-legendItem">
         <div class="seatCharts-seat seatCharts-cell selected"></div>
         <span class="seatCharts-legendDescription">已选中</span>
-      </li>
+      </div>
     </ul>
   </div>
 </div>
