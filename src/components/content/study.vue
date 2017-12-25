@@ -3,18 +3,18 @@
   <!--img src="../../Image/学习.png" height="300" width="300"/-->
   <search ref="search" v-on:pass_rosta="getRoomStates"></search>
   <div class="demo">
+    <br>
     <div id="seat-map" >
       <div v-for="(value,key) in room_states" id="rooms" >
         <div class="seatCharts-cell" >{{key}}</div>
-        <div id ="test">
         <div v-for="(valuex,index) in value" id="seats">
           <div v-if = "valuex == 0" @click="selectTime(key,index)" id="s_0" class="seat"></div>
           <div v-else-if ="valuex == 2" @click="cancelTime(key,index)" id="s_2" class="seat"></div>
           <div v-else-if ="valuex == 3" id="s_3" class="seat"></div>
           <div v-else="values == 1" id="s_1" class="seat"></div>
         </div>
-        </div>
-        <br/>
+        <br>
+        <line id="line_02"></line>
       </div>
     </div>
   </div>
@@ -140,12 +140,12 @@
     #study{
           text-align: center;
     }
-    #rooms{
-      margin-left:auto;
-      width : 100%;
-      height: 50px
-
-    }
+  #rooms{
+    margin-left:250px;
+    width : 800px;
+    height: 50px;
+    text-align: center;
+  }
 
     #test{
       margin-left:30px;
@@ -185,5 +185,12 @@
       background-color: #472B34;
       cursor: not-allowed;
     }
-
+    .line_02{
+      padding: 0 20px 0;
+      width: 600px;
+      height:2px;
+      margin: auto;
+      line-height: 2px;
+      color: black;
+    }
 </style>

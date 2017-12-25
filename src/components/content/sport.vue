@@ -3,18 +3,17 @@
   <!--img src="../../Image/运动.png" height="300" width="300"/-->
   <search ref="search" v-on:pass_rosta="getRoomStates"></search>
   <div class="demo">
+    <br>
     <div id="seat-map" >
       <div v-for="(value,key) in room_states" id="rooms" >
         <div class="seatCharts-cell" >{{key}}</div>
-        <div id ="test">
         <div v-for="(valuex,index) in value" id="seats">
           <div v-if = "valuex == 0" @click="selectTime(key,index)" id="s_0" class="seat"></div>
           <div v-else-if ="valuex == 2" @click="cancelTime(key,index)" id="s_2" class="seat"></div>
           <div v-else-if ="valuex == 3" id="s_3" class="seat"></div>
           <div v-else="values == 1" id="s_1" class="seat"></div>
         </div>
-        </div>
-        <br/>
+        <line class="line_02"></line>
       </div>
     </div>
   </div>
@@ -141,15 +140,17 @@
     text-align: center;
   }
   .demo {
-    width: 1600px;
+    background-color: #f4f4ff;
+    width: 760px;
     margin:  0 auto;
-    min-height: 50px;
+    min-height: 300px;
     text-align: center;
   }
 
   @media screen and (max-width: 1200px) {
     .demo {
-      width: 1600px
+      width: 1200px;
+      margin: 40px auto 0 auto;
     }
   }
 
@@ -158,9 +159,10 @@
   }
 
   #rooms{
-    margin-left:auto;
-    width : 100%;
-    height: 50px
+    margin-left:15px;
+    width : 800px;
+    height: 50px;
+    text-align: center;
   }
 
   .front {
