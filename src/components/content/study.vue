@@ -19,6 +19,35 @@
     </div>
   </div>
   <button id="submit_button" @click="submitOrder" >确认提交</button>
+  <div id="legend" class="seatCharts-legend2">
+    <ul class="seatCharts-legendList">
+      <li class="seatCharts-legendItem">
+        <span class="seatCharts-legendDescription">30min/格</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="legend" class="seatCharts-legend">
+    <ul class="seatCharts-legendList">
+      <div class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell available"></div>
+        <span class="seatCharts-legendDescription">可预约</span>
+      </div>
+      <div class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell unavailable"></div>
+        <span class="seatCharts-legendDescription">已预约</span>
+      </div>
+      <div class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell auditting"></div>
+        <span class="seatCharts-legendDescription">审核中</span>
+      </div>
+      <div class="seatCharts-legendItem">
+        <div class="seatCharts-seat seatCharts-cell selected"></div>
+        <span class="seatCharts-legendDescription">已选中</span>
+      </div>
+    </ul>
+  </div>
+
 </div>
 </template>
 
@@ -136,6 +165,7 @@
       text-align: center;
       outline: none;
       font-size: 13px;
+      border-radius: 5px;
     }
 
     #s_0{
@@ -144,6 +174,7 @@
 
     #s_3 {
       background-color: #1a29b4;
+      cursor: not-allowed;
     }
 
     #s_2 {
