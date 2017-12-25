@@ -3,7 +3,7 @@
       <select v-model="hall_type">
         <option v-for="(value,key) in room_list" v-bind:value="key">{{key}}</option>
       </select>
-      <input type = "date" v-model="sel_time" id="date_input">
+      <input type = "date" value="2017-12-25" v-model="sel_time" id="date_input">
     </div>
 </template>
 
@@ -11,10 +11,13 @@
     import rooms from "../../assets/room_list.json"
     export default {
         name: "search",
+        mounted: function(){
+            this.initTime()
+        },
         data() {
             return {
                 //prepare the data of the search box
-                sel_time: "",
+                sel_time: " ",
                 site_type:"",
                 hall_type:"",
                 room_list:{}
@@ -32,6 +35,16 @@
             }
         },
         methods : {
+            initTime(){
+              var now = new Date()
+              var date = document.getElementById("date_input");
+              var now_time=""
+              now_time += now.getFullYear().toString()+'-'
+              now_time += now.getMonth().toString()+'-'
+              now_time += now.getDate().toString()
+              date.value = now_time
+              //console.log("have init time")
+            },
             //check the validity of the data
             getRoomStatus(now_time, now_hall){
                 if (now_time =="" || now_hall=="")
@@ -76,12 +89,10 @@
             initStudy() {
                 this.site_type = "study_site"
                 this.room_list = rooms["study_site"]
-                this.hall_type = ""
             },
-            initSport(){
-                this.room_list = rooms["sport_site"]
-                this.site_type = "sport_site"
-                this.hall_type = ""
+            initSport() {
+              this.room_list = rooms["sport_site"]
+              this.site_type = "sport_site"
               //console.log("search init sport")
             }
         }
