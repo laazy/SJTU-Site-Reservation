@@ -18,7 +18,7 @@
       </div>
     </div>
   </div>
-  <button id="submit_button" @click="submitOrder" >确认提交</button>
+  <button id="submit_button" @click="submitOrder" class="btn-success">确认提交</button>
   <div id="legend" class="seatCharts-legend2">
     <ul class="seatCharts-legendList">
       <li class="seatCharts-legendItem">

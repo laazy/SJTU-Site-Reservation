@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <button id="submit_button" @click="submitOrder">确认提交</button>
+  <button id="submit_button" @click="submitOrder" class="btn-success">确认提交</button>
   <br>
   <div id="legend" class="seatCharts-legend2">
     <ul class="seatCharts-legendList">
@@ -155,11 +155,11 @@
   }
 
   #seats{
-    margin-left: 30px;
+    margin-left: 35px;
   }
 
   #rooms{
-    margin-left:15px;
+    margin-left:10px;
     width : 800px;
     height: 50px;
     text-align: center;
